@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
 <title>MASS Senior Project</title>
+<meta name="description" content="MASS, the Modular Acoustic Suppression System: a senior design project for the NASA Human Lander Challenge by Gabriel Choi and team at Cal Poly SLO.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e4572e'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EGC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -29,9 +31,9 @@ nav b{font:400 22px var(--serif)}
 #theme{background:none;border:1px solid var(--line);color:var(--ink);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:15px}
 #theme:hover,#theme:focus-visible{border-color:var(--accent)}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.hero{padding-block:84px 56px;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:end}
+.hero{padding-block:84px 56px;display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:48px;align-items:end}
 .hero>*{min-width:0}
-h1{font:400 clamp(44px,7.5vw,96px)/.98 var(--serif);letter-spacing:-.02em;margin:22px 0;text-wrap:balance}
+h1{font:400 clamp(40px,6vw,80px)/1 var(--serif);letter-spacing:-.02em;margin:22px 0;text-wrap:balance}
 h1 em{color:var(--accent)}
 .lead{color:var(--mute);font-size:clamp(17px,2vw,20px);max-width:34em;margin:0 0 22px}
 .awards{display:flex;flex-wrap:wrap;gap:10px}
@@ -42,7 +44,8 @@ h1 em{color:var(--accent)}
 .tb div:first-child{background:var(--ink);color:var(--bg)}.tb div:first-child span{color:inherit;opacity:.7}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .stat{padding:28px 20px;border-right:1px solid var(--line)}.stat:last-child{border:0}
-.num{font:400 clamp(34px,4.6vw,58px)/1 var(--serif);color:var(--accent);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.num{white-space:nowrap;font:400 clamp(32px,4.2vw,52px)/1 var(--serif);color:var(--accent);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.num small{font-size:.48em;margin-left:.18em;letter-spacing:0}
 .stat p{margin:10px 0 0;color:var(--mute);font-size:14.5px;line-height:1.45}
 section{padding-block:80px;border-top:1px solid var(--line)}
 .stats+section,.stats-wrap+section{border-top:0}
@@ -115,7 +118,7 @@ svg .ac{fill:var(--accent)}
 .tl{grid-template-columns:1fr}.tl>div{border-right:0;border-bottom:1px solid var(--line)}.tl>div:last-child{border:0}
 .parts,.tests,.slots,.slots.two{grid-template-columns:1fr}
 .slot.feature{grid-row:auto}
-.navr a{display:none}
+.navr a:not(:first-child){display:none}.navr{gap:16px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
@@ -142,10 +145,10 @@ svg .ac{fill:var(--accent)}
 </header>
 
 <div class="wrap stats-wrap"><div class="stats">
-<div class="stat"><div class="num">60–200 Hz</div><p>Target band for the absorber, where ECLSS fans hurt sleep and concentration</p></div>
-<div class="stat"><div class="num">0.205 m</div><p>Maximum cavity depth, cut from 0.305 m to save cabin space</p></div>
-<div class="stat"><div class="num">4.49 s</div><p>Average time for cavity pressure to equalize across five tests</p></div>
-<div class="stat"><div class="num">10.3 g</div><p>RMS random vibration survived on the shake table, 20–2000 Hz</p></div>
+<div class="stat"><div class="num">60–200<small>Hz</small></div><p>Target band for the absorber, where ECLSS fans hurt sleep and concentration</p></div>
+<div class="stat"><div class="num">0.205<small>m</small></div><p>Maximum cavity depth, cut from 0.305 m to save cabin space</p></div>
+<div class="stat"><div class="num">4.49<small>s</small></div><p>Average time for cavity pressure to equalize across five tests</p></div>
+<div class="stat"><div class="num">10.3<small>g</small></div><p>RMS random vibration survived on the shake table, 20–2000 Hz</p></div>
 </div></div>
 
 <section id="problem"><div class="wrap">
@@ -216,7 +219,7 @@ svg .ac{fill:var(--accent)}
 <rect class="f" x="40" y="20" width="14" height="260"/>
 <text x="20" y="300" class="m">T-slot wall mount</text>
 <path class="a" d="M54 60 H386"/>
-<text x="150" y="48">MEMBRANE (fluorosilicone)</text>
+<text x="70" y="48">MEMBRANE (fluorosilicone)</text>
 <path class="s" d="M54 60 L74 82 L54 104 L74 126 L54 148 L74 170 L54 192 L74 214 L54 236"/>
 <path class="s" d="M386 60 L366 82 L386 104 L366 126 L386 148 L366 170 L386 192 L366 214 L386 236"/>
 <text x="150" y="140" class="m">SEALED AIR CAVITY</text>
@@ -227,7 +230,7 @@ svg .ac{fill:var(--accent)}
 <text x="228" y="312" class="m">PRESSURE ORIFICE</text>
 <rect class="f" x="408" y="150" width="22" height="100"/>
 <path class="s" d="M419 150 V96"/>
-<text x="366" y="288" class="m">LINEAR ACTUATOR</text>
+<text x="452" y="288" class="m" text-anchor="end">LINEAR ACTUATOR</text>
 <path class="a" d="M419 136 V104 M413 112 L419 102 L425 112"/>
 <path class="d" d="M28 60 H44 M28 236 H44 M36 60 V236"/>
 <text x="4" y="150" class="ac" transform="rotate(-90 12 150)">d = 0.05–0.205 m</text>
@@ -248,9 +251,9 @@ svg .ac{fill:var(--accent)}
 <section id="verification"><div class="wrap">
 <div class="sh"><h2>Verification</h2><span class="mono mute">Feasibility prototype · May 2026</span></div>
 <div class="tests">
-<div class="test"><span class="mono mute">Actuator and electronics</span><div class="num">60–250 Hz</div><p>Frequency sweep. The controller smoothed noisy readings, and the actuators moved smoothly in both directions across the full height range.</p></div>
-<div class="test"><span class="mono mute">Pressure equalization</span><div class="num">4.49 s</div><p>Average over five tests, each shifting the chamber depth three inches. The prototype used a small seal gap. The flight design uses a 13 mm orifice.</p></div>
-<div class="test"><span class="mono mute">Launch vibration</span><div class="num">10.3 g RMS</div><p>Random profile from 20 to 2000 Hz on a shake table, ramped through 25, 50, and 75 percent, then held at 100 percent for 5 minutes. The only issue was loose hex nuts, so we switched to lock nuts.</p></div>
+<div class="test"><span class="mono mute">Actuator and electronics</span><div class="num">60–250<small>Hz</small></div><p>Frequency sweep. The controller smoothed noisy readings, and the actuators moved smoothly in both directions across the full height range.</p></div>
+<div class="test"><span class="mono mute">Pressure equalization</span><div class="num">4.49<small>s</small></div><p>Average over five tests, each shifting the chamber depth three inches. The prototype used a small seal gap. The flight design uses a 13 mm orifice.</p></div>
+<div class="test"><span class="mono mute">Launch vibration</span><div class="num">10.3<small>g RMS</small></div><p>Random profile from 20 to 2000 Hz on a shake table, ramped through 25, 50, and 75 percent, then held at 100 percent for 5 minutes. The only issue was loose hex nuts, so we switched to lock nuts.</p></div>
 </div>
 <div class="note"><b>What these tests did and did not show.</b> They verified that the mechanism tunes, equalizes pressure, and survives launch-like vibration. The prototype used a TPU housing and mass-loaded vinyl membrane instead of flight materials. The planned acoustic test, measuring low-frequency noise reduction against the NC-40 criterion, was not completed because we did not have a suitable test facility. The predicted noise reduction comes from analysis, not measurement.</div>
 </div></section>

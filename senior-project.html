@@ -101,14 +101,29 @@ svg .ac{fill:var(--accent)}
 .team{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;color:var(--mute);font-size:15px}
 .group{margin-bottom:44px}
 .group h3{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:18px}
-.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.slots.two{grid-template-columns:2fr 1fr 1fr}
+.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.slots.two{grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr)}
 .slot{border:1.5px dashed var(--mute);border-radius:4px;min-height:150px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;color:var(--mute);min-width:0;transition:border-color .2s,color .2s}
 .slot:hover{border-color:var(--accent);color:var(--ink)}
 .slot b{display:block;font:400 22px/1.15 var(--serif);color:var(--ink)}
 .slot.photo{aspect-ratio:4/3;min-height:0}
 .slot.feature{grid-row:span 2;aspect-ratio:auto;min-height:260px;border-color:var(--accent)}
 .slot.feature .mono:first-child{color:var(--accent)}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.shots figure{margin:0;min-width:0}
+.shots img{display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;border:1px solid var(--line);background:#fff}
+.shots figcaption{margin-top:8px;color:var(--mute);font-size:14px;line-height:1.4}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}.pair figure{margin:0;min-width:0}.pair img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line)}.pair figcaption{margin-top:8px;color:var(--mute);font-size:14px}
+.files{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:16px}
+.file{display:grid;grid-template-columns:130px minmax(0,1fr);gap:18px;align-items:center;border:1px solid var(--line);background:var(--card);padding:14px;min-width:0;transition:border-color .2s}
+.file:hover,.file:focus-visible{border-color:var(--accent)}
+.file img{display:block;width:100%;height:auto;border:1px solid var(--line);background:#fff}
+.file .meta{display:flex;flex-direction:column;gap:8px;min-width:0}
+.file b{font:400 22px/1.15 var(--serif)}
+.file .go{color:var(--accent)}
+.featured.exp{grid-row:auto;aspect-ratio:4/3;min-height:0}.featured{position:relative;grid-row:span 2;min-height:260px;border:1px solid var(--accent);background:var(--card);overflow:hidden;min-width:0}
+.featured img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.featured .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff}
 .foot{padding-block:56px 40px;border-top:1px solid var(--line)}
 .foot .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--mute)}
 @media(max-width:820px){
@@ -116,8 +131,7 @@ svg .ac{fill:var(--accent)}
 .hero{padding-block:52px 40px}
 .stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
 .tl{grid-template-columns:1fr}.tl>div{border-right:0;border-bottom:1px solid var(--line)}.tl>div:last-child{border:0}
-.parts,.tests,.slots,.slots.two{grid-template-columns:1fr}
-.slot.feature{grid-row:auto}
+.parts,.tests,.slots,.slots.two{grid-template-columns:minmax(0,1fr)}.slots .featured{grid-row:auto;aspect-ratio:4/3;min-height:0}.shots{grid-template-columns:repeat(2,minmax(0,1fr))}.pair{grid-template-columns:minmax(0,1fr)}.file{grid-template-columns:100px minmax(0,1fr)}
 .navr a:not(:first-child){display:none}.navr{gap:16px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
@@ -255,6 +269,14 @@ svg .ac{fill:var(--accent)}
 <div class="test"><span class="mono mute">Pressure equalization</span><div class="num">4.49<small>s</small></div><p>Average over five tests, each shifting the chamber depth three inches. The prototype used a small seal gap. The flight design uses a 13 mm orifice.</p></div>
 <div class="test"><span class="mono mute">Launch vibration</span><div class="num">10.3<small>g RMS</small></div><p>Random profile from 20 to 2000 Hz on a shake table, ramped through 25, 50, and 75 percent, then held at 100 percent for 5 minutes. The only issue was loose hex nuts, so we switched to lock nuts.</p></div>
 </div>
+<div class="shots">
+<figure><img src="images/mass-cad-assembly.jpg" alt="CAD model of the verification prototype: a black accordion chamber on an aluminum frame" width="1200" height="797" loading="lazy"><figcaption>Verification prototype, CAD model</figcaption></figure>
+<figure><img src="images/mass-prototype.jpg" alt="The assembled verification prototype on a workbench" width="714" height="631" loading="lazy"><figcaption>Assembled prototype</figcaption></figure>
+<figure><img src="images/mass-shake-table.jpg" alt="The prototype mounted on a shake table for the vibration test" width="1200" height="1268" loading="lazy"><figcaption>On the shake table, 20–2000 Hz random vibration</figcaption></figure>
+<figure><img src="images/mass-actuator-test.jpg" alt="Breadboard, stepper motor and phone showing a 98 Hz tone during the actuator test" width="1200" height="900" loading="lazy"><figcaption>Actuator and electronics test setup</figcaption></figure>
+<figure><img src="images/mass-cad-motor-mount.jpg" alt="SolidWorks model of the motor mount assembly with the accordion membrane chamber" width="1300" height="1140" loading="lazy"><figcaption>Motor mount assembly in SolidWorks</figcaption></figure>
+<figure><img src="images/mass-100hz-test.jpg" alt="The prototype on a bench with a laptop playing a 100 Hz tone" width="1179" height="658" loading="lazy"><figcaption>Bench test with a 100 Hz tone</figcaption></figure>
+</div>
 <div class="note"><b>What these tests did and did not show.</b> They verified that the mechanism tunes, equalizes pressure, and survives launch-like vibration. The prototype used a TPU housing and mass-loaded vinyl membrane instead of flight materials. The planned acoustic test, measuring low-frequency noise reduction against the NC-40 criterion, was not completed because we did not have a suitable test facility. The predicted noise reduction comes from analysis, not measurement.</div>
 </div></section>
 
@@ -295,32 +317,37 @@ svg .ac{fill:var(--accent)}
 </div></div></section>
 
 <section id="materials"><div class="wrap">
-<div class="sh"><h2>Project materials</h2><span class="mono mute">Reports, photos, competition files</span></div>
+<div class="sh"><h2>Project materials</h2><span class="mono mute">Reports, poster, competition files</span></div>
 
 <div class="group">
 <h3>Final Design Review <span class="mono mute">Report</span></h3>
-<div class="slots">
-<a class="slot" href="#materials" id="slot-fdr"><span class="mono">PDF</span><b>Final Design Review report</b><span class="mono">File to be added</span></a>
+<div class="files">
+<a class="file" href="files/Final_Design_Review.pdf" target="_blank" rel="noopener"><img src="images/thumb-fdr.jpg" alt="Cover page of the MASS Final Design Review report" width="640" height="829" loading="lazy"><span class="meta"><span class="mono mute">PDF · 139 pages · 8.7 MB</span><b>Final Design Review report</b><span class="mono go">Open PDF →</span></span></a>
 </div>
 </div>
 
 <div class="group">
 <h3>Senior Project Expo <span class="mono" style="color:var(--accent)">1st place · presentation poster</span></h3>
 <div class="slots two">
-<a class="slot feature" href="#materials" id="slot-expo-poster"><span class="mono">Featured photo</span><b>Winning poster at the expo</b><span class="mono">Photo to be added</span></a>
-<a class="slot photo" href="#materials" id="slot-expo-1"><span class="mono">Photo</span><span class="mono">To be added</span></a>
-<a class="slot photo" href="#materials" id="slot-expo-2"><span class="mono">Photo</span><span class="mono">To be added</span></a>
-<a class="slot photo" href="#materials" id="slot-expo-3"><span class="mono">Photo</span><span class="mono">To be added</span></a>
-<a class="slot photo" href="#materials" id="slot-expo-4"><span class="mono">Photo</span><span class="mono">To be added</span></a>
+<a class="featured" href="files/Expo_Poster.pdf" target="_blank" rel="noopener"><img src="images/expo-poster.jpg" alt="The MASS project poster that won first place at the Senior Project Expo" width="2000" height="1500" loading="lazy"><span class="cap mono">1st place poster · Open PDF →</span></a>
+<a class="featured exp" href="images/expo-team.jpg" target="_blank" rel="noopener"><img src="images/expo-team.jpg" alt="The MASS team in front of their prototype and poster at the Senior Project Expo" width="1400" height="1050" loading="lazy" style="object-fit:cover"><span class="cap mono">With the prototype at the Expo</span></a>
+<div class="slot photo"><span class="mono">Expo photo</span><span class="mono">To be added</span></div>
+<div class="slot photo"><span class="mono">Expo photo</span><span class="mono">To be added</span></div>
+<div class="slot photo"><span class="mono">Expo photo</span><span class="mono">To be added</span></div>
 </div>
 </div>
 
 <div class="group">
 <h3>NASA Human Lander Challenge <span class="mono mute">Competition materials</span></h3>
-<div class="slots">
-<a class="slot" href="#materials" id="slot-paper"><span class="mono">PDF</span><b>Technical paper</b><span class="mono">File to be added</span></a>
-<a class="slot" href="#materials" id="slot-slides"><span class="mono">Slides</span><b>Slide show</b><span class="mono">File to be added</span></a>
-<a class="slot" href="#materials" id="slot-poster"><span class="mono">PDF or image</span><b>Competition poster</b><span class="mono">File to be added</span></a>
+<div class="pair" style="margin:0 0 16px">
+<figure><img src="images/hulc-team-presentation.jpg" alt="The MASS team standing beside the title slide at the 2026 HuLC Forum" width="1400" height="1050" loading="lazy"><figcaption>Presenting at the 2026 HuLC Forum, Huntsville, AL</figcaption></figure>
+<figure><img src="images/hulc-team-poster.jpg" alt="The MASS team in front of the project poster at the 2026 HuLC Forum" width="1400" height="1050" loading="lazy"><figcaption>With the MASS poster</figcaption></figure>
+</div>
+<figure style="margin:0 0 16px;max-width:640px"><img src="images/hulc-finalists.jpg" alt="NASA announcement of the 2026 Human Lander Challenge finalists, including the MASS team, beside a photo of the team at an ice cream parlor" width="1400" height="836" loading="lazy" style="display:block;width:100%;height:auto;border:1px solid var(--line)"><figcaption style="margin-top:8px;color:var(--mute);font-size:14px">Named a 2026 Human Lander Challenge finalist</figcaption></figure>
+<div class="files">
+<a class="file" href="files/NASA_Technical_Paper.pdf" target="_blank" rel="noopener"><img src="images/thumb-paper.jpg" alt="Title page of the 2026 Human Lander Challenge technical paper" width="640" height="829" loading="lazy"><span class="meta"><span class="mono mute">PDF · 23 pages · 1.5 MB</span><b>Technical paper</b><span class="mono go">Open PDF →</span></span></a>
+<a class="file" href="files/NASA_HuLC_Slides.pdf" target="_blank" rel="noopener"><img src="images/thumb-slides.jpg" alt="Title slide of the MASS competition presentation" width="800" height="450" loading="lazy"><span class="meta"><span class="mono mute">PDF · 39 slides · 6.0 MB</span><b>Slide show</b><span class="mono go">Open PDF →</span></span></a>
+<div class="slot"><span class="mono">PDF or image</span><b>Competition poster</b><span class="mono">File to be added</span></div>
 </div>
 </div>
 </div></section>

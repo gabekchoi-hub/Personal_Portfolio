@@ -58,13 +58,19 @@ details[open] .plus{transform:rotate(45deg)}
 .det{display:grid;grid-template-columns:70px minmax(0,1fr) minmax(0,1fr);gap:16px 32px;padding:4px 8px 38px;align-items:start}.det>*{min-width:0}
 .txt{display:flex;flex-direction:column;gap:16px;min-width:0}
 .det .ph{width:100%;aspect-ratio:4/3;border-radius:6px;display:flex;align-items:flex-end;padding:12px;color:rgba(255,255,255,.85)}
+.det .ph.has-img{padding:0;display:block;overflow:hidden}.det .ph img{display:block;width:100%;height:100%;object-fit:cover}
 .det .role{margin:0;color:var(--accent)}
 .det ul{margin:0;padding:0 0 0 18px;color:var(--mute)}
 .det li{margin-bottom:10px}.det li b{color:var(--ink);font-weight:500}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips i{font:400 11.5px var(--mono);text-transform:uppercase;letter-spacing:.05em;padding:4px 10px;border:1px solid var(--line);border-radius:3px}
 .g1{background:linear-gradient(135deg,#e4572e,#7a2a14)}.g2{background:linear-gradient(135deg,#2b4a5a,#122028)}.g3{background:linear-gradient(135deg,#6e6b3a,#2f2e17)}.g4{background:linear-gradient(135deg,#4c3d63,#1f1829)}
-.arch{columns:4;column-gap:14px}
+.arch{columns:3;column-gap:14px}
+.arch figure{margin:0 0 14px;break-inside:avoid;min-width:0}
+.arch img,.arch video{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#000}
+.arch figcaption{margin-top:6px;font-size:12px;color:var(--mute)}
+.photo.has-img{border:0;padding:0;overflow:hidden}.photo.has-img img{display:block;width:100%;height:100%;object-fit:cover}
+
 .tile{width:100%;min-width:0;break-inside:avoid;margin-bottom:14px;aspect-ratio:1;border-radius:6px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;color:rgba(255,255,255,.9);transition:transform .3s}
 .tile:hover{transform:rotate(-1.5deg) scale(1.03)}
 .tile:nth-child(2n){aspect-ratio:4/5}.tile:nth-child(3n){aspect-ratio:5/4}
@@ -90,6 +96,11 @@ details[open] .plus{transform:rotate(45deg)}
 summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{display:none}
 .det{grid-template-columns:minmax(0,1fr)}.det>div:first-child{display:none}.navr{gap:16px}.navr a:nth-child(3){display:none}.hero{padding-block:56px}.photo{max-width:220px}}
 @media(max-width:480px){.navr a:nth-child(2){display:none}}
+.rgal{columns:3;column-gap:14px;margin-top:8px}
+.rgal figure{margin:0 0 14px;break-inside:avoid;min-width:0}
+.rgal img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.rgal figcaption{margin-top:6px;font-size:12px;color:var(--mute)}
+@media(max-width:780px){.rgal{columns:2}}@media(max-width:480px){.rgal{columns:1}}
 @media(prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.pill:before{animation:none}}
 </style>
 </head>
@@ -130,24 +141,23 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{display:non
 <div class="det"><div></div><div class="txt"><p class="role mono">Mechanical / Biomedical R&amp;D Intern</p><ul><li>Redesigned the <b>catheter storage system</b> in SolidWorks with FEA, moving from 3D-printed prototypes to laser-cut production units while coordinating fabrication and assembly.</li><li>Cut rack manufacturing cost by <b>85%, from ~$20,000 to under $3,000</b>.</li><li>Built resin-printed <b>mock blood vessels</b> and ran stent testing, modeling radial force and wall-thickness behavior in MATLAB and Excel. Replaced outsourced $1,500 vessels with <b>$2 in-house prints</b>.</li></ul><div class="chips"><i>SolidWorks</i><i>FEA</i><i>MATLAB</i><i>Stent testing</i><i>Cost reduction</i></div></div><div class="ph g2 mono">Add photo / render</div></div></details>
 
 <details><summary><span class="n mono">( 03 )</span><h3>Adaptive acoustic suppression for Artemis</h3><span class="where mono">NASA Human Lander Challenge</span><span class="plus">+</span></summary>
-<div class="det"><div></div><div class="txt"><p class="role mono">Absorber System Design Lead · Senior design project</p><ul><li>One of <b>12 teams selected and awarded $9,000</b> to develop MASS, an adaptive acoustic-suppression concept for NASA Artemis lander ECLSS equipment.</li><li>Led the modeling and design of a <b>tunable membrane absorber</b> targeting 60–200 Hz noise, cutting device depth from 0.305 m to <b>0.205 m</b> while keeping target-frequency coverage.</li><li>Designed and validated a <b>sensor-integrated actuator</b> that swept 60–250 Hz, equalized chamber pressure in 4.49 s, and survived simulated launch vibration at 10.3 g RMS. Co-authored and presented the NASA technical paper.</li></ul><div class="chips"><i>Acoustics</i><i>NASA</i><i>Actuators</i><i>Vibration</i></div><a class="more mono" href="senior-project.html">Read the full case study →</a></div><div class="ph g3 mono">Add photo / render</div></div></details>
+<div class="det"><div></div><div class="txt"><p class="role mono">Absorber System Design Lead · Senior design project</p><ul><li>One of <b>12 teams selected and awarded $9,000</b> to develop MASS, an adaptive acoustic-suppression concept for NASA Artemis lander ECLSS equipment.</li><li>Led the modeling and design of a <b>tunable membrane absorber</b> targeting 60–200 Hz noise, cutting device depth from 0.305 m to <b>0.205 m</b> while keeping target-frequency coverage.</li><li>Designed and validated a <b>sensor-integrated actuator</b> that swept 60–250 Hz, equalized chamber pressure in 4.49 s, and survived simulated launch vibration at 10.3 g RMS. Co-authored and presented the NASA technical paper.</li></ul><div class="chips"><i>Acoustics</i><i>NASA</i><i>Actuators</i><i>Vibration</i></div><a class="more mono" href="senior-project.html">Read the full case study →</a></div><div class="ph has-img"><img src="images/mass-shake-table.jpg" alt="The MASS verification prototype mounted on a shake table" width="1200" height="1268" loading="lazy"></div></div></details>
 
 <details><summary><span class="n mono">( 04 )</span><h3>World-record electric vehicle</h3><span class="where mono">Prototype Vehicles Lab · 2023 – now</span><span class="plus">+</span></summary>
-<div class="det"><div></div><div class="txt"><p class="role mono">Mechanical Team Lead</p><ul><li>Leading a <b>15-member mechanical team</b> that designs and builds an EV for a world-record distance attempt, coordinating across high-voltage, low-voltage, aeroshell, and business teams.</li><li>Designed the complete <b>battery integration system</b> and trained 20+ members in SolidWorks, DFM, and machining.</li></ul><div class="chips"><i>Team lead</i><i>Battery integration</i><i>DFM</i><i>Machining</i></div></div><div class="ph g4 mono">Add photo / render</div></div></details>
+<div class="det"><div></div><div class="txt"><p class="role mono">Mechanical Team Lead</p><ul><li>Leading a <b>15-member mechanical team</b> that designs and builds an EV for a world-record distance attempt, coordinating across high-voltage, low-voltage, aeroshell, and business teams.</li><li>Designed the complete <b>battery integration system</b> and trained 20+ members in SolidWorks, DFM, and machining.</li></ul><div class="chips"><i>Team lead</i><i>Battery integration</i><i>DFM</i><i>Machining</i></div></div><div class="ph has-img"><img src="images/ev-chassis.jpg" alt="The electric vehicle chassis with suspension installed in the Prototype Vehicles Lab shop" width="1050" height="1400" loading="lazy" style="object-position:50% 62%"></div></div></details>
 
 </div></div></section>
 
 <section id="builds"><div class="wrap">
 <div class="sh rise"><h2>Builds archive</h2><span class="mono" style="color:var(--mute)">Labs · DIY · experiments</span></div>
 <div class="arch rise">
-<div class="tile g1"><span class="mono">( 01 )</span><span class="mono">Add photo</span></div>
-<div class="tile g2"><span class="mono">( 02 )</span><span class="mono">Add photo</span></div>
-<div class="tile g4"><span class="mono">( 03 )</span><span class="mono">Add photo</span></div>
-<div class="tile g3"><span class="mono">( 04 )</span><span class="mono">Add photo</span></div>
-<div class="tile g2"><span class="mono">( 05 )</span><span class="mono">Add photo</span></div>
-<div class="tile g1"><span class="mono">( 06 )</span><span class="mono">Add photo</span></div>
-<div class="tile g3"><span class="mono">( 07 )</span><span class="mono">Add photo</span></div>
-<div class="tile g4"><span class="mono">( 08 )</span><span class="mono">Add photo</span></div>
+<figure><video controls preload="none" playsinline muted poster="images/poster-battery.jpg" width="960" height="720" aria-label="Screen recording of the EV battery integration CAD assembly"><source src="videos/battery-integration.mp4" type="video/mp4"></video><figcaption class="mono">EV battery pack · SolidWorks walkthrough</figcaption></figure>
+<figure><img src="images/ev-weld.jpg" alt="Welding underneath the EV chassis with a work light" width="1170" height="634" loading="lazy"><figcaption class="mono">EV chassis · welding</figcaption></figure>
+<figure><img src="images/ev-paint.jpg" alt="Chassis frame rails and brackets after painting in the paint booth" width="1050" height="1400" loading="lazy"><figcaption class="mono">EV frame parts · paint booth</figcaption></figure>
+<figure><img src="images/ev-electronics.jpg" alt="Top view of the EV high-voltage electronics board mounted on the chassis" width="1050" height="1400" loading="lazy"><figcaption class="mono">EV · powertrain electronics</figcaption></figure>
+<figure><video controls preload="none" playsinline muted poster="images/poster-lab.jpg" width="960" height="720" aria-label="Video of a microcontroller board with keypad and LCD generating waveforms shown on an oscilloscope"><source src="videos/lab-demo.mp4" type="video/mp4"></video><figcaption class="mono">Mechatronics lab · signal generator on a microcontroller</figcaption></figure>
+<figure><img src="images/ev-suspension.jpg" alt="Front suspension and brake caliper being installed on the EV chassis" width="1050" height="1400" loading="lazy"><figcaption class="mono">EV · suspension install</figcaption></figure>
+<figure><img src="images/mass-cad-motor-mount.jpg" alt="SolidWorks model of the MASS motor mount assembly" width="1300" height="1140" loading="lazy"><figcaption class="mono">MASS · motor mount assembly (CAD)</figcaption></figure>
 </div>
 <p class="mono rise" style="color:var(--mute);margin-top:22px">Coursework: strength &amp; stiffness · vibrations · mechatronics · heat transfer · system dynamics</p>
 </div></section>
@@ -163,10 +173,10 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{display:non
 <section id="lead"><div class="wrap lead2">
 <div class="rise"><div class="big" data-to="30" data-suf="+">0</div><p class="mono" style="color:var(--mute)">Active members · Cal Poly Rotaract</p></div>
 <div class="rise"><h2 style="margin-bottom:22px">I started a club.<br>It grew.</h2><p style="color:var(--mute);max-width:32em;margin:0 0 14px">I founded Cal Poly Rotaract and grew it to 30+ active members, organizing 40+ service events with 10+ local humanitarian organizations.</p><p style="color:var(--mute);max-width:32em;margin:0">I also started a Humanitarian Engineering subcommittee that develops sustainable, community-focused design solutions, and expanded STEM outreach and mentorship for local K–12 students.</p></div>
-</div></section>
+</div><div class="wrap"><div class="rgal rise"><figure><img src="images/rot-ignacio.jpg" alt="Club members with Rotary Club of Ignacio volunteers at a food distribution" width="1400" height="965" loading="lazy"><figcaption class="mono">Food distribution · Rotary Club of Ignacio</figcaption></figure><figure><img src="images/rot-walk-for-water.jpg" alt="Four members carrying water jugs for the Walk for Water" width="800" height="555" loading="lazy"><figcaption class="mono">Walk for Water</figcaption></figure><figure><img src="images/rot-officers.jpg" alt="Rotaract members wearing pink Rotaract stoles" width="1179" height="858" loading="lazy"><figcaption class="mono">Rotaract members</figcaption></figure><figure><img src="images/rot-walk-team.jpg" alt="Four members in matching blue Walk for Water shirts" width="993" height="985" loading="lazy"><figcaption class="mono">Walk for Water team</figcaption></figure><figure><img src="images/rot-beach-cleanup.jpg" alt="Members holding trash grabbers and buckets at a beach cleanup in Avila Beach" width="1218" height="861" loading="lazy"><figcaption class="mono">Avila Beach cleanup</figcaption></figure><figure><img src="images/rot-social.jpg" alt="Members in sun hats at a community social" width="800" height="784" loading="lazy"><figcaption class="mono">Community social</figcaption></figure></div></div></section>
 
 <section id="about"><div class="wrap about">
-<div class="photo mono rise">gabriel.jpg<br>(drop your photo here)</div>
+<div class="photo has-img rise"><img src="images/portrait.jpg" alt="Portrait of Gabriel Choi in a Prototype Vehicles Lab polo" width="667" height="1000" loading="lazy"></div>
 <div class="rise"><h2 style="margin-bottom:26px">About</h2>
 <p>I’m Gabriel, a mechanical engineering student who loves turning ideas into functional, cost-effective solutions. I care about thoughtful engineering, rapid prototyping, and purposeful design, and I’m headed toward a career in medical devices.</p>
 <p>I’m driven by curiosity and community, and by the belief that good engineering should make life better, simpler, and more accessible. Eagle Scout, perpetual tinkerer.</p>

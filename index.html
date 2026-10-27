@@ -124,7 +124,7 @@ details[open] .plus{transform:rotate(45deg)}
 .arch{columns:2}
 summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column:2;grid-row:2;text-align:left;font-size:11px;margin-top:-8px}summary .plus{grid-row:1 / span 2;grid-column:3}summary .n{grid-row:1 / span 2;align-self:center}
 .det{grid-template-columns:minmax(0,1fr)}.det>div:first-child{display:none}.navr{gap:16px}.navr a:nth-child(3){display:none}.hero{padding-block:56px}.photo{max-width:220px}}
-@media(max-width:480px){.navr a:nth-child(2){display:none}}
+@media(max-width:480px){.navr a:nth-child(2),.navr a:nth-child(4){display:none}}
 .rgal{columns:3;column-gap:14px;margin-top:8px}
 .rgal figure{margin:0 0 14px;break-inside:avoid;min-width:0}
 .rgal img{display:block;width:100%;height:auto;border:1px solid var(--line)}
@@ -134,13 +134,14 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column
 </style>
 </head>
 <body>
-<nav><div class="wrap"><b>Gabriel Choi</b><div class="navr mono"><a href="#work">Work</a><a href="#builds">Builds</a><a href="#labs">Labs</a><a href="#lead">Leadership</a><a href="#about">About</a><button id="theme" aria-label="Toggle theme">◐</button></div></div></nav>
+<nav><div class="wrap"><b>Gabriel Choi</b><div class="navr mono"><a href="#work">Work</a><a href="#builds">Builds</a><a href="#labs">Labs</a><a href="#lead">Leadership</a><a href="#about">About</a><a href="files/Gabriel_Choi_Resume.pdf" target="_blank" rel="noopener">Resume</a><button id="theme" aria-label="Toggle theme">◐</button></div></div></nav>
 
 <header class="wrap hero">
 <div>
 <span class="pill mono">Abbott co-op · Cardiac Rhythm Mgmt</span>
 <h1>I design medical devices that make life <em>simpler.</em></h1>
 <p class="lead">Mechanical engineering student at Cal Poly SLO. I design, prototype, and validate hardware, with CAD, FEA, and hands-on testing, from pacemaker components to catheter systems to a world-record electric vehicle.</p>
+<p style="margin:26px 0 0"><a class="btn f" style="margin-left:0" href="files/Gabriel_Choi_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a><a class="btn" style="margin-left:0" href="https://www.linkedin.com/in/gabriel-k-choi" target="_blank" rel="noopener">LinkedIn</a><a class="btn" style="margin-left:0" href="mailto:gabekchoi@gmail.com">Email</a></p>
 </div>
 <div class="tb">
 <div>Title block<span>Rev. 2026</span></div>
@@ -370,6 +371,39 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column
 <figure><img style="object-fit:contain;background:#fff" src="images/ctl5-step.jpg" alt="Simulated step response with the optimized PID gains" width="713" height="429" loading="lazy"><figcaption class="mono">Step response, optimized gains</figcaption></figure>
 </div>
 </details>
+<div class="org rise" id="fluids"><span class="logo txt-logo mono">Cal Poly</span><div><h3>Fluid Mechanics</h3><p class="mono">ME 347 · Team lab memos · measurement, uncertainty, modeling</p></div></div>
+<details><summary><span class="n mono">F1</span><h3>Pipe flow analysis</h3><span class="where mono">ME 347 · Lab 4 · Flowrate and uncertainty</span><span class="plus">+</span></summary>
+<div class="det solo"><div></div><div class="txt"><ul><li>Measured the <b>volumetric flowrate through a tube</b> at four tank heights by weighing and timing the discharge: <b>0.717 gpm at 1.26 ft</b> down to <b>0.54 gpm at 0.75 ft</b>, with propagated uncertainty on every point.</li><li>Built an <b>energy-equation model</b> with an iterated friction factor (Moody diagram) that predicted 0.70 gpm at the highest tank height; the experimental and model uncertainty ranges overlap at every height.</li><li>Used <b>dye injection</b> to watch the turbulent-to-laminar transition as the tank drained, then calculated the transition at <b>Re ≈ 5,400 to 6,060</b>, well above the textbook 2,300, and discussed pipe roughness and losses as likely causes.</li></ul><div class="chips"><i>Uncertainty analysis</i><i>Friction factor</i><i>Reynolds number</i><i>Flow visualization</i></div>
+<a class="file" style="grid-template-columns:minmax(0,1fr)" href="files/ME347_Lab4_Pipe_Flow.pdf" target="_blank" rel="noopener"><span class="meta"><span class="mono mute">PDF · team memo, 12 pages</span><b>Lab 4 memo: pipe flow analysis</b><span class="mono go">Open memo →</span></span></a>
+</div></div>
+<div class="media3 two">
+<figure><img style="object-fit:contain;background:#fff" src="images/fl4-flowrate.jpg" alt="Plot of experimental and model flowrate against tank height with error bars" width="1100" height="794" loading="lazy"><figcaption class="mono">Flowrate vs tank height · experiment and model</figcaption></figure>
+</div>
+</details>
+<details><summary><span class="n mono">F2</span><h3>Flat plate boundary layer</h3><span class="where mono">ME 347 · Lab 6 · Pitot-static traverse</span><span class="plus">+</span></summary>
+<div class="det solo"><div></div><div class="txt"><ul><li>Traversed a <b>Pitot-static tube</b> through the boundary layer on a flat plate in a wind tunnel and converted pressure readings to a velocity profile.</li><li>Numerically integrated the profile (trapezoidal rule) for <b>boundary layer thickness 1.645 mm</b>, <b>displacement thickness 0.368 mm</b> and <b>momentum thickness 0.167 mm</b>, giving a drag force of <b>0.0335 N</b> and a drag coefficient of 0.00202.</li><li>Compared against <b>Blasius (laminar)</b> and <b>power-law (turbulent)</b> predictions: the measured thickness was within <b>1.9% of laminar</b> and 67% from turbulent, so the flow was classified as laminar at Re<sub>x</sub> = 2.6 × 10<sup>5</sup>.</li></ul><div class="chips"><i>Boundary layer</i><i>Pitot-static tube</i><i>Numerical integration</i><i>Blasius</i></div>
+<a class="file" style="grid-template-columns:minmax(0,1fr)" href="files/ME347_Lab6_Flat_Plate_Boundary_Layer.pdf" target="_blank" rel="noopener"><span class="meta"><span class="mono mute">PDF · team memo, 18 pages</span><b>Lab 6 memo: flat plate boundary layer flow</b><span class="mono go">Open memo →</span></span></a>
+</div></div>
+<div class="media3 two">
+<figure><img style="object-fit:contain;background:#fff" src="images/fl6-velocity.jpg" alt="Streamwise velocity against distance from the plate with laminar and turbulent predictions" width="1020" height="594" loading="lazy"><figcaption class="mono">Velocity vs distance · laminar and turbulent models</figcaption></figure><figure><img style="object-fit:contain;background:#fff" src="images/fl6-normalized.jpg" alt="Normalized velocity against normalized distance from the plate" width="1020" height="630" loading="lazy"><figcaption class="mono">Normalized profile · u/U vs y/δ</figcaption></figure>
+</div>
+</details>
+<details><summary><span class="n mono">F3</span><h3>Cylinder drag in cross flow</h3><span class="where mono">ME 347 · Lab 7 · Surface pressure vs wake momentum</span><span class="plus">+</span></summary>
+<div class="det solo"><div></div><div class="txt"><ul><li>Measured the drag on a <b>brass and an aluminum cylinder</b> in a wind tunnel two ways: surface pressure taps (every 5° around the brass cylinder) and a Pitot-static <b>wake velocity traverse</b>.</li><li>Surface-pressure method gave <b>C<sub>D</sub> = 1.44</b> and the wake-momentum method gave <b>0.70</b>, against a theoretical value of about 1.2 at Re<sub>D</sub> ≈ 3.5 × 10<sup>4</sup>.</li><li>Concluded the surface method was more reliable and traced the momentum-method error to a <b>single streamwise probe location</b> in a three-dimensional turbulent wake, which a Pitot-static tube cannot measure well.</li></ul><div class="chips"><i>Wind tunnel</i><i>Pressure coefficient</i><i>Momentum method</i><i>Drag coefficient</i></div>
+<a class="file" style="grid-template-columns:minmax(0,1fr)" href="files/ME347_Lab7_Cylinder_Drag.pdf" target="_blank" rel="noopener"><span class="meta"><span class="mono mute">PDF · team memo, 21 pages</span><b>Lab 7 memo: cylinder drag coefficients</b><span class="mono go">Open memo →</span></span></a>
+</div></div>
+<div class="media3 two">
+<figure><img style="object-fit:contain;background:#fff" src="images/fl7-cp.jpg" alt="Pressure coefficient against cylinder angle with statistical uncertainty" width="1250" height="786" loading="lazy"><figcaption class="mono">Cp vs cylinder angle · brass</figcaption></figure><figure><img style="object-fit:contain;background:#fff" src="images/fl7-wake.jpg" alt="Normalized wake velocity against normalized vertical position for brass and aluminum cylinders" width="1310" height="824" loading="lazy"><figcaption class="mono">Wake velocity profile</figcaption></figure>
+</div>
+</details>
+<details><summary><span class="n mono">F4</span><h3>Axial fan performance curves</h3><span class="where mono">ME 347 · Lab 10 · Fan scaling laws</span><span class="plus">+</span></summary>
+<div class="det solo"><div></div><div class="txt"><ul><li>Built <b>performance curves for an axial fan</b> at 1320 and 1750 RPM by closing variable-air-volume dampers in steps and calculating flowrate, head gain, motor power and efficiency from Pitot-static readings.</li><li>Found the <b>best efficiency point</b> at mid-range flow: peak efficiency <b>17.9% at 1320 RPM</b> and about <b>18.3% at 1750 RPM</b>.</li><li>Scaled the 1320 RPM data to 1750 RPM with the <b>fan similarity laws</b> (head ∝ N², power ∝ N³) and checked the prediction against measurements: good agreement mid-range, with the largest deviations near stall.</li></ul><div class="chips"><i>Fan curves</i><i>Similarity laws</i><i>Efficiency / BEP</i><i>Dimensional analysis</i></div>
+<a class="file" style="grid-template-columns:minmax(0,1fr)" href="files/ME347_Lab10_Axial_Fan_Performance.pdf" target="_blank" rel="noopener"><span class="meta"><span class="mono mute">PDF · team memo, 18 pages</span><b>Lab 10 memo: axial fan performance</b><span class="mono go">Open memo →</span></span></a>
+</div></div>
+<div class="media3">
+<figure><img style="object-fit:contain;background:#fff" src="images/fl10-head.jpg" alt="Head gain against flowrate at two fan speeds" width="1250" height="820" loading="lazy"><figcaption class="mono">Head gain vs flowrate · 1320 and 1750 RPM</figcaption></figure><figure><img style="object-fit:contain;background:#fff" src="images/fl10-scaled.jpg" alt="Head gain with scaled 1750 RPM prediction overlaid" width="1170" height="750" loading="lazy"><figcaption class="mono">Scaled vs measured head gain</figcaption></figure><figure><img style="object-fit:contain;background:#fff" src="images/fl10-eff.jpg" alt="Efficiency against flowrate with scaled prediction" width="1110" height="780" loading="lazy"><figcaption class="mono">Efficiency · measured and scaled</figcaption></figure>
+</div>
+</details>
 </div></section>
 
 <section id="skills"><div class="wrap">
@@ -395,7 +429,7 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column
 
 <footer class="foot"><div class="wrap">
 <h2>Let’s build something.</h2>
-<p class="mono" style="margin:0 0 22px">gabekchoi@gmail.com</p><a class="btn f" href="https://www.linkedin.com/in/gabriel-k-choi">LinkedIn</a><a class="btn" href="https://www.instagram.com/choiboiy2">Instagram</a>
+<p class="mono" style="margin:0 0 22px">gabekchoi@gmail.com</p><a class="btn f" href="files/Gabriel_Choi_Resume.pdf" target="_blank" rel="noopener">Resume</a><a class="btn" href="https://www.linkedin.com/in/gabriel-k-choi">LinkedIn</a><a class="btn" href="https://www.instagram.com/choiboiy2">Instagram</a>
 <div class="legal mono"><span>© Gabriel Choi 2026</span><span>Press T to flip the lights</span></div>
 </div></footer>
 

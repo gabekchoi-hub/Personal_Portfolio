@@ -32,7 +32,7 @@ nav b{font:400 22px var(--serif)}
 .pill:before{content:"";width:8px;height:8px;border-radius:50%;background:#34c759;box-shadow:0 0 0 0 rgba(52,199,89,.6);animation:p 2s infinite}
 @keyframes p{70%{box-shadow:0 0 0 8px rgba(52,199,89,0)}100%{box-shadow:0 0 0 0 rgba(52,199,89,0)}}
 .hero{padding-block:96px 72px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;align-items:end}.hero>*{min-width:0}
-h1{font:400 clamp(48px,8.5vw,112px)/.96 var(--serif);letter-spacing:-.025em;margin:26px 0 26px}
+h1{font:400 clamp(44px,6.6vw,88px)/.96 var(--serif);letter-spacing:-.025em;margin:26px 0 26px}
 h1 em{color:var(--accent)}
 .lead{color:var(--mute);max-width:32em;font-size:clamp(17px,2vw,20px);margin:0}
 .tb{border:1.5px solid var(--ink);background:var(--bg);font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
@@ -139,8 +139,8 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column
 <header class="wrap hero">
 <div>
 <span class="pill mono">Abbott co-op · Cardiac Rhythm Mgmt</span>
-<h1>I design medical devices that make life <em>simpler.</em></h1>
-<p class="lead">Mechanical engineering student at Cal Poly SLO. I design, prototype, and validate hardware, with CAD, FEA, and hands-on testing, from pacemaker components to catheter systems to a world-record electric vehicle.</p>
+<h1>Mechanical engineer. Pacemakers, catheters, and a world-record <em>EV.</em></h1>
+<p class="lead">Mechanical engineering student at Cal Poly SLO. I design, prototype, and validate hardware, with CAD, FEA, and hands-on testing, and I’m headed toward a career in medical devices.</p>
 <p style="margin:26px 0 0"><a class="btn f" style="margin-left:0" href="files/Gabriel_Choi_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a><a class="btn" style="margin-left:0" href="https://www.linkedin.com/in/gabriel-k-choi" target="_blank" rel="noopener">LinkedIn</a><a class="btn" style="margin-left:0" href="mailto:gabekchoi@gmail.com">Email</a></p>
 </div>
 <div class="tb">
@@ -213,6 +213,7 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column
 <section id="builds"><div class="wrap">
 <div class="sh rise"><h2>Builds archive</h2><span class="mono" style="color:var(--mute)">Labs · DIY · experiments</span></div>
 <div class="arch rise">
+<figure><img src="images/duck-story.jpg" alt="Three stacked images: the original chick design with a circular cutout, the SolidWorks model of the two-piece housing, and the finished yellow clock held in a hand" width="1000" height="3104" loading="lazy"><figcaption class="mono">Duck clock · design → SolidWorks → clock, a side project for a friend</figcaption></figure>
 <figure><video controls preload="none" playsinline muted poster="images/poster-drive.jpg" width="720" height="1280" aria-label="Video of the electric vehicle chassis driving in a parking lot"><source src="videos/prove-drive-test.mp4" type="video/mp4"></video><figcaption class="mono">EV · first drive test</figcaption></figure>
 <figure><video controls preload="none" playsinline muted poster="images/poster-battery.jpg" width="960" height="720" aria-label="Screen recording of the EV battery integration CAD assembly"><source src="videos/battery-integration.mp4" type="video/mp4"></video><figcaption class="mono">EV battery pack · SolidWorks walkthrough</figcaption></figure>
 <figure><img src="images/ev-weld.jpg" alt="Welding underneath the EV chassis with a work light" width="1170" height="634" loading="lazy"><figcaption class="mono">EV chassis · welding</figcaption></figure>
@@ -221,12 +222,7 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column
 <figure><video controls preload="none" playsinline muted poster="images/poster-lab.jpg" width="960" height="720" aria-label="Video of a microcontroller board with keypad and LCD generating waveforms shown on an oscilloscope"><source src="videos/lab-demo.mp4" type="video/mp4"></video><figcaption class="mono">Mechatronics lab · signal generator on a microcontroller</figcaption></figure>
 <figure><img src="images/ev-suspension.jpg" alt="Front suspension and brake caliper being installed on the EV chassis" width="1050" height="1400" loading="lazy"><figcaption class="mono">EV · suspension install</figcaption></figure>
 <figure><img src="images/mass-cad-motor-mount.jpg" alt="SolidWorks model of the MASS motor mount assembly" width="1300" height="1140" loading="lazy"><figcaption class="mono">MASS · motor mount assembly (CAD)</figcaption></figure>
-<figure><img src="images/brain-print.jpg" alt="Hand holding a white 3D-printed brain model" width="1250" height="1056" loading="lazy"><figcaption class="mono">3D-printed brain · from an MRI</figcaption></figure>
-<figure><img src="images/brain-mri.jpg" alt="Brain2print viewer showing axial, coronal and sagittal MRI slices with a 3D head render" width="945" height="437" loading="lazy"><figcaption class="mono">Brain2print · MRI segmentation</figcaption></figure>
-<figure><img src="images/brain-slicer.jpg" alt="Slicer preview of the brain model with tree supports, about 7h 51m print time" width="1120" height="860" loading="lazy"><figcaption class="mono">Slicer · tree supports, ~7.9 h print</figcaption></figure>
-<figure><img src="images/duck-clock.jpg" alt="Hand-held yellow duck-shaped wall clock with a quartz clock face" width="1039" height="1009" loading="lazy"><figcaption class="mono">Duck clock · side project for a friend</figcaption></figure>
-<figure><img src="images/duck-cad.jpg" alt="SolidWorks model of the two-piece duck clock housing" width="1023" height="870" loading="lazy"><figcaption class="mono">Duck clock · SolidWorks model</figcaption></figure>
-<figure><img src="images/duck-sketch.jpg" alt="Original duck design with a circular cutout for the clock" width="745" height="807" loading="lazy"><figcaption class="mono">Duck clock · original design</figcaption></figure>
+<figure><img src="images/brain-story.jpg" alt="Three stacked images: MRI slices of a brain, the slicer preview with tree supports, and the finished white 3D-printed brain held in a hand" width="1000" height="2275" loading="lazy"><figcaption class="mono">Brain print · MRI → slice (~7.9 h) → print</figcaption></figure>
 </div>
 <p class="mono rise" style="color:var(--mute);margin-top:22px">Coursework: strength &amp; stiffness · vibrations · mechatronics · heat transfer · system dynamics</p>
 </div></section>
@@ -416,7 +412,7 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column
 
 <section id="lead"><div class="wrap lead2">
 <div class="rise"><div class="big" data-to="30" data-suf="+">0</div><p class="mono" style="color:var(--mute)">Active members · Cal Poly Rotaract</p></div>
-<div class="rise"><h2 style="margin-bottom:22px">I started a club.<br>It grew.</h2><p style="color:var(--mute);max-width:32em;margin:0 0 14px">I founded Cal Poly Rotaract and grew it to 30+ active members, organizing 40+ service events with 10+ local humanitarian organizations.</p><p style="color:var(--mute);max-width:32em;margin:0">I also started a Humanitarian Engineering subcommittee that develops sustainable, community-focused design solutions, and expanded STEM outreach and mentorship for local K–12 students.</p></div>
+<div class="rise"><h2 style="margin-bottom:22px">Founded a club.<br>Built it to 30+ members.</h2><p style="color:var(--mute);max-width:32em;margin:0 0 14px">I founded Cal Poly Rotaract and grew it to 30+ active members, organizing 40+ service events with 10+ local humanitarian organizations.</p><p style="color:var(--mute);max-width:32em;margin:0">I also started a Humanitarian Engineering subcommittee that develops sustainable, community-focused design solutions, and expanded STEM outreach and mentorship for local K–12 students.</p></div>
 </div><div class="wrap"><div class="rgal rise"><figure><img src="images/rot-ignacio.jpg" alt="Club members with Rotary Club of Ignacio volunteers at a food distribution" width="1400" height="965" loading="lazy"><figcaption class="mono">Food distribution · Rotary Club of Ignacio</figcaption></figure><figure><img src="images/rot-walk-for-water.jpg" alt="Four members carrying water jugs for the Walk for Water" width="800" height="555" loading="lazy"><figcaption class="mono">Walk for Water</figcaption></figure><figure><img src="images/rot-officers.jpg" alt="Rotaract members wearing pink Rotaract stoles" width="1179" height="858" loading="lazy"><figcaption class="mono">Rotaract members</figcaption></figure><figure><img src="images/rot-walk-team.jpg" alt="Four members in matching blue Walk for Water shirts" width="993" height="985" loading="lazy"><figcaption class="mono">Walk for Water team</figcaption></figure><figure><img src="images/rot-beach-cleanup.jpg" alt="Members holding trash grabbers and buckets at a beach cleanup in Avila Beach" width="1218" height="861" loading="lazy"><figcaption class="mono">Avila Beach cleanup</figcaption></figure><figure><img src="images/rot-social.jpg" alt="Members in sun hats at a community social" width="800" height="784" loading="lazy"><figcaption class="mono">Community social</figcaption></figure></div></div></section>
 
 <section id="about"><div class="wrap about">

@@ -80,6 +80,8 @@ details[open] .plus{transform:rotate(45deg)}
 .media3 figure{margin:0;min-width:0}
 .media3 img,.media3 video{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 30%;border:1px solid var(--line);border-radius:6px;background:#000}
 .media3 figcaption{margin-top:6px;font-size:12px;color:var(--mute)}
+.figrow{padding:0 8px 38px 102px}.figrow iframe{display:block;width:100%;max-width:760px;height:820px;border:0;background:transparent;color-scheme:normal}
+@media(max-width:780px){.figrow{padding:0 8px 30px}}
 .logos{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;padding:34px 0 6px}
 .logos .mono{color:var(--mute);margin-right:6px}
 .logos a{display:flex;align-items:center;justify-content:center;height:64px;padding:10px 20px;background:#fff;border:1px solid var(--line);border-radius:6px;transition:transform .25s}
@@ -206,7 +208,7 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column
 </details>
 <div class="org rise" id="calpoly"><span class="logo txt-logo mono">Cal Poly</span><div><h3>Cal Poly senior design</h3><p class="mono">NASA Human Lander Challenge · Absorber System Design Lead</p></div></div>
 <details><summary><span class="n mono">4.1</span><h3>Adaptive acoustic suppression for Artemis</h3><span class="where mono">Absorber Design Lead · 1 of 12 NASA teams</span><span class="plus">+</span></summary>
-<div class="det"><div></div><div class="txt"><ul><li>As <b>Absorber System Design Lead</b>, led the modeling and design of a <b>tunable membrane absorber</b> targeting 60–200 Hz noise, cutting device depth by a third (0.305 m to <b>0.205 m</b>) while keeping target-frequency coverage.</li><li>Designed and validated a <b>sensor-integrated actuator</b> that swept 60–250 Hz, equalized chamber pressure in 4.49 s, and survived simulated launch vibration at 10.3 g RMS.</li><li>Our team was one of <b>12 selected and awarded $9,000</b> to develop MASS, an adaptive acoustic-suppression concept for NASA Artemis lander ECLSS equipment. I co-authored and presented the NASA technical paper.</li></ul><div class="chips"><i>Acoustics</i><i>NASA</i><i>Actuators</i><i>Vibration</i></div><a class="more mono" href="senior-project.html">Read the full case study →</a></div><div class="ph has-img"><img src="images/mass-shake-table.jpg" alt="The MASS verification prototype mounted on a shake table" width="1200" height="1268" loading="lazy"></div></div></details>
+<div class="det"><div></div><div class="txt"><ul><li>As <b>Absorber System Design Lead</b>, led the modeling and design of a <b>tunable membrane absorber</b> targeting 60–200 Hz noise, cutting device depth by a third (0.305 m to <b>0.205 m</b>) while keeping target-frequency coverage.</li><li>Designed and validated a <b>sensor-integrated actuator</b> that swept 60–250 Hz, equalized chamber pressure in 4.49 s, and survived simulated launch vibration at 10.3 g RMS.</li><li>Our team was one of <b>12 selected and awarded $9,000</b> to develop MASS, an adaptive acoustic-suppression concept for NASA Artemis lander ECLSS equipment. I co-authored and presented the NASA technical paper.</li></ul><div class="chips"><i>Acoustics</i><i>NASA</i><i>Actuators</i><i>Vibration</i></div><a class="more mono" href="senior-project.html">Read the full case study →</a></div><div class="ph has-img"><img src="images/mass-shake-table.jpg" alt="The MASS verification prototype mounted on a shake table" width="1200" height="1268" loading="lazy"></div></div><div class="figrow"><iframe id="massfig" src="figures/mass-absorber.html" title="Interactive isometric model of the MASS tuned membrane absorber" loading="lazy"></iframe></div></details>
 
 </div></div></section>
 
@@ -433,7 +435,11 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column
 var root=document.documentElement;
 try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
 function flip(){var dark=root.getAttribute('data-theme')?root.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
-var n=dark?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}}
+var n=dark?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}syncFig()}
+var massfig=document.getElementById('massfig');
+function syncFig(){if(massfig&&massfig.contentWindow)massfig.contentWindow.postMessage({massTheme:root.getAttribute('data-theme')||'auto'},'*')}
+if(massfig)massfig.addEventListener('load',syncFig);
+addEventListener('message',function(e){if(massfig&&e.source===massfig.contentWindow&&e.data&&e.data.massHeight)massfig.style.height=Math.ceil(e.data.massHeight)+'px'});
 document.getElementById('theme').onclick=flip;
 document.addEventListener('keydown',function(e){if((e.key==='t'||e.key==='T')&&!e.metaKey&&!e.ctrlKey)flip()});
 document.querySelectorAll('[data-to]').forEach(function(c){c.textContent=(c.dataset.pre||'')+c.dataset.to+(c.dataset.suf||'')});

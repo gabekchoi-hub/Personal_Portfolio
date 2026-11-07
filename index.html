@@ -156,10 +156,10 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column
 </header>
 
 <div class="wrap"><div class="stats rise">
-<div class="stat"><div class="num" data-to="85" data-suf="%">0</div><p>Catheter rack cost cut, ~$20k down to under $3k</p></div>
-<div class="stat"><div class="num" data-to="9" data-pre="$" data-suf="k">0</div><p>NASA award for the senior design project, 1 of 12 teams</p></div>
-<div class="stat"><div class="num" data-to="15" data-suf="">0</div><p>Engineers on the EV mechanical team I lead</p></div>
-<div class="stat"><div class="num" data-to="40" data-suf="+">0</div><p>Service events organized through Cal Poly Rotaract</p></div>
+<div class="stat"><div class="num" data-to="85" data-suf="%">85%</div><p>Catheter rack cost cut, ~$20k down to under $3k</p></div>
+<div class="stat"><div class="num" data-to="9" data-pre="$" data-suf="k">$9k</div><p>NASA award for the senior design project, 1 of 12 teams</p></div>
+<div class="stat"><div class="num" data-to="15" data-suf="">15</div><p>Engineers on the EV mechanical team I lead</p></div>
+<div class="stat"><div class="num" data-to="40" data-suf="+">40+</div><p>Service events organized through Cal Poly Rotaract</p></div>
 </div></div>
 
 
@@ -413,7 +413,7 @@ summary{grid-template-columns:52px minmax(0,1fr) 24px}summary .where{grid-column
 </div></div></section>
 
 <section id="lead"><div class="wrap lead2">
-<div class="rise"><div class="big" data-to="30" data-suf="+">0</div><p class="mono" style="color:var(--mute)">Active members · Cal Poly Rotaract</p></div>
+<div class="rise"><div class="big" data-to="30" data-suf="+">30+</div><p class="mono" style="color:var(--mute)">Active members · Cal Poly Rotaract</p></div>
 <div class="rise"><h2 style="margin-bottom:22px">Founded a club.<br>Built it to 30+ members.</h2><p style="color:var(--mute);max-width:32em;margin:0 0 14px">I founded Cal Poly Rotaract and grew it to 30+ active members, organizing 40+ service events with 10+ local humanitarian organizations.</p><p style="color:var(--mute);max-width:32em;margin:0">I also started a Humanitarian Engineering subcommittee that develops sustainable, community-focused design solutions, and expanded STEM outreach and mentorship for local K–12 students.</p></div>
 </div><div class="wrap"><div class="rgal rise"><figure><img src="images/rot-ignacio.jpg" alt="Club members with Rotary Club of Ignacio volunteers at a food distribution" width="1400" height="965" loading="lazy"><figcaption class="mono">Food distribution · Rotary Club of Ignacio</figcaption></figure><figure><img src="images/rot-walk-for-water.jpg" alt="Four members carrying water jugs for the Walk for Water" width="800" height="555" loading="lazy"><figcaption class="mono">Walk for Water</figcaption></figure><figure><img src="images/rot-officers.jpg" alt="Rotaract members wearing pink Rotaract stoles" width="1179" height="858" loading="lazy"><figcaption class="mono">Rotaract members</figcaption></figure><figure><img src="images/rot-walk-team.jpg" alt="Four members in matching blue Walk for Water shirts" width="993" height="985" loading="lazy"><figcaption class="mono">Walk for Water team</figcaption></figure><figure><img src="images/rot-beach-cleanup.jpg" alt="Members holding trash grabbers and buckets at a beach cleanup in Avila Beach" width="1218" height="861" loading="lazy"><figcaption class="mono">Avila Beach cleanup</figcaption></figure><figure><img src="images/rot-social.jpg" alt="Members in sun hats at a community social" width="800" height="784" loading="lazy"><figcaption class="mono">Community social</figcaption></figure></div></div></section>
 
@@ -442,7 +442,6 @@ if(massfig)massfig.addEventListener('load',syncFig);
 addEventListener('message',function(e){if(massfig&&e.source===massfig.contentWindow&&e.data&&e.data.massHeight)massfig.style.height=Math.ceil(e.data.massHeight)+'px'});
 document.getElementById('theme').onclick=flip;
 document.addEventListener('keydown',function(e){if((e.key==='t'||e.key==='T')&&!e.metaKey&&!e.ctrlKey)flip()});
-document.querySelectorAll('[data-to]').forEach(function(c){c.textContent=(c.dataset.pre||'')+c.dataset.to+(c.dataset.suf||'')});
 function count(c){var to=+c.dataset.to,pre=c.dataset.pre||'',suf=c.dataset.suf||'',t0=performance.now();
 (function f(t){var p=Math.min((t-t0)/1200,1);c.textContent=pre+Math.round(to*(1-Math.pow(1-p,3)))+(p===1?suf:'');if(p<1)requestAnimationFrame(f)})(t0)}
 var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
